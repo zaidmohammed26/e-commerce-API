@@ -10,10 +10,14 @@ const helmet = require("helmet");
 const xss = require("xss-clean");
 const cors = require("cors");
 const mongoSanitize = require("express-mongo-sanitize");
+const middleware = require("auto-docs-cli/middleware");
+
 // DATABASE
 const connectDB = require("./db/connect");
 
 //ROUTESs
+app.use(middleware);
+
 const authRouter = require("./routes/authRoutes");
 const userRouter = require("./routes/userRoutes");
 const productRouter = require("./routes/productRoutes");
