@@ -5,7 +5,7 @@ const authenticateUser = (req, res, next) => {
   const token = req.signedCookies.token;
 
   if (!token) {
-    throw new CustomError.UnauthenticatedError("Authenticatioon Failed");
+    throw new CustomError.UnauthenticatedError("Authentication Failed");
   }
 
   try {
